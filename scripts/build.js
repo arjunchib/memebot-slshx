@@ -27,6 +27,7 @@ const application = useProductionApplication ? env.production : env.development;
 const applicationId = application?.applicationId;
 const applicationPublicKey = application?.applicationPublicKey;
 const applicationSecret = application?.applicationSecret;
+const applicationBotToken = application?.applicationBotToken;
 
 // Validate environment
 function assert(name, value, warn = "") {
@@ -62,6 +63,9 @@ const define = {
   SLSHX_TEST_SERVER_ID: includeTestServer
     ? JSON.stringify(testServerId)
     : "undefined",
+  SLSHX_APPLICATION_BOT_TOKEN: removeDeployCode
+    ? "undefined" // Don't publish bot token
+    : JSON.stringify(applicationBotToken),
 };
 if (removeDeployCode) {
   // Force globalThis.MINIFLARE to be false, so esbuild can remove dead-code

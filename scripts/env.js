@@ -12,6 +12,7 @@ const envPath = path.resolve(__dirname, "..", "env.jsonc");
  * @property {[string]} applicationId
  * @property {[string]} applicationPublicKey
  * @property {[string]} applicationSecret
+ * @property {[string]} applicationBotToken
  */
 
 /**

@@ -10,5 +10,17 @@ import {
 export function play(): CommandHandler<Env> {
   useDescription("Plays a meme");
   const meme = useString("meme", "Name of meme", { required: true });
-  return (interaction, env, ctx) => <Message ephemeral>{meme}</Message>;
+  return async (interaction, env, ctx) => {
+    let id = env.DO.idFromName("A");
+    let stub = env.DO.get(id);
+    let response: Response = await stub.fetch(
+      new Request("https://arjunchib.com/")
+    );
+    return (
+      <Message ephemeral>
+        {meme}
+        {await response.text()}
+      </Message>
+    );
+  };
 }
