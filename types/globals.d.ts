@@ -6,4 +6,5 @@ declare global {
   const SLSHX_APPLICATION_PUBLIC_KEY: string;
   const SLSHX_APPLICATION_SECRET: string | undefined;
   const SLSHX_TEST_SERVER_ID: string | undefined;
+  const SLSHX_APPLICATION_BOT_TOKEN: string;
 }

@@ -1,6 +1,5 @@
 import { createHandler } from "slshx";
-import { play } from "./add";
-export { DurableObjectExample } from "./do";
+import { play } from "./play";
 
 const handler = createHandler({
   // Replaced by esbuild when bundling, see scripts/build.js (do not edit)
@@ -13,3 +12,4 @@ const handler = createHandler({
 });
 
 export default { fetch: handler };
+export { DurableObjectExample } from "./do";

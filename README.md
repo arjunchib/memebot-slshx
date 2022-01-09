@@ -1,8 +1,33 @@
-# ⚔️ Slshx Starter Template
+# Memebot on Cloudflare Workers
 
-This is the starter template for **Slshx**, a library for building strongly-typed
-[Discord commands](https://discord.com/developers/docs/interactions/application-commands)
-that run on [Cloudflare Workers](https://workers.cloudflare.com/), using a
-React-inspired syntax.
+Memebot is a discord bot that downloads audio from youtube and can be played back on a voice channel using slash commands.
 
-See the [Slshx repository](https://github.com/mrbbot/slshx) for setup instructions.
+This is built using [Slshx](https://github.com/mrbbot/slshx), a react-like framework for discord interactions on Cloudflare.
+This project attempts to create a gateway and voice connections for a bot using a durable object. Currently development on this is suspended until Cloudflare implments [UDP sockets on workers](https://blog.cloudflare.com/introducing-socket-workers/), which is needed for streaming audio to discord.
+
+## Geting started
+
+1. Clone the repo
+
+   ```
+   git clone <this>
+   cd memebot-slshx
+   ```
+
+2. Install dependencies
+
+   ```
+   pnpm i
+   ```
+
+3. Setup tunnel in a terminal
+
+   ```
+   cloudflared tunnel --hostname <hostname> --url localhost:8787 --name memebot
+   ```
+
+4. Run dev server in another terminal
+
+   ```
+   pnpm dev
+   ```
