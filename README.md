@@ -10,7 +10,7 @@ This project attempts to create a gateway and voice connections for a bot using 
 1. Clone the repo
 
    ```
-   git clone <this>
+   git clone https://github.com/arjunchib/memebot-slshx.git
    cd memebot-slshx
    ```
 
